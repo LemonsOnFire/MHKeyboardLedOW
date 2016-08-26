@@ -1,0 +1,43 @@
+{
+	"manifest_version":1,
+	"type":"WebApp",
+	"meta":{
+		"name":"Heroic Lighting",
+		"version":"0.3.0",
+		"minimum-overwolf-version":"0.94.203.0",
+		"author":"James Witten",
+		"icon":"IconMouseOver.png",
+		"icon_gray":"IconMouseNormal.png",
+		"description":"Heroic Lighting App for use with Marvel Heroes 2016 and Logitech G series keyboards with per-key LEDs ex:G810",
+		"permissions":["GameInfo","Media","LogitechLed"]
+	},
+	"data":{
+		"start_window":"MainWindow",
+		"game_events":[9530],
+		"launch_events":[
+			{
+				"event": "GameLaunch",
+				"event_data": {
+					"game_ids": [9530]
+				},
+				"start_minimized": true
+			}
+		],
+		"windows":{
+			"MainWindow":{
+				"file":"Files/index.html",
+				"transparent":false,
+				"resizable":true,
+				"show_in_taskbar": true,
+				"show_minimize":true,
+				"disable_rightclick":true,
+				"desktop_only":true,
+				"grab_keyboard_focus":false,
+				"size":{
+					"width":432,
+					"height":650
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+	<head> 
+		<link rel="stylesheet" href="style.css" />
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<title>Marvel Heroes Lighting Effects</title>
+		<script>
+			overwolf.logitech.led.init(function(callback){
+				if (callback.status=="success"){
+					overwolf.logitech.led.setTargetDevice(overwolf.logitech.led.enums.LogitechDeviceLightingType[PerkeyRGB],result)
+				}
+			});
+
+			function dragMove(){
+				overwolf.windows.getCurrentWindow(function(result){
+					if (result.status=="success"){
+						overwolf.windows.dragMove(result.window.id);
+					}
+				});
+			};
+			function FlashKeysWhite(){
+				var redPer,greenPer,bluePer = 100;
+				var duration = 300;
+				var interval = 500;
+				overwolf.logitech.led.saveCurrentLighting(callback2);
+				overwolf.logitech.led.flashLighting(redPer,greenPer,bluePer,duration,interval,callback3);
+			};
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="content" onmousedown="dragMove();">
+			<h2>Marvel Heroes LED Lighting Effects</h2>
+			<!-- <hr>
+			<button id="flash-keys" onclick="FlashKeysWhite();">Flash Keys White</button> -->
+			<hr>
+			<div class="row">
+			Toggle for Key Color Change by Hero &nbsp;&nbsp;&nbsp;
+			<label class="switch">
+				<input type="checkbox" id="TogleColorChangeViaHero">
+				<div class="slider"></div>
+			</label>
+			<p>Currently selected Hero: <br>Having this enabled will change the keys used to a color scheme based off of the character you have selected in game.</p>
+			<hr>
+			Toggle for Pulse Keys Red on Hero Death &nbsp;&nbsp;&nbsp;
+			<label class="switch">
+				<input type="checkbox" id="TogleColorChangeViaHero">
+				<div class="slider"></div>
+			</label>
+			<br>
+			Toggle for Flood Keys Red on Hero Death &nbsp;&nbsp;&nbsp;
+			<label class="switch">
+				<input type="checkbox" id="TogleColorChangeViaHero">
+				<div class="slider"></div>
+			</label>
+			<p>When Pulse is enabled all the keys pulse red for 2 seconds then goes back to the previous lighting.<br>
+			When Flood Keys is enabled the keys will slowly change to red from the top down and then go back to the previous lighting.</p>
+			<hr>
+			Toggle for Flash Keys White on Level Up &nbsp;&nbsp;&nbsp;
+			<label class="switch">
+				<input type="checkbox" id="TogleColorChangeViaHero">
+				<div class="slider"></div>
+			</label>
+			<p>When this is enabled all the keys flash white for a half second when your Hero Levels Up then return to the previous lighting.</p>
+			<hr>
+			Toggle for Flash U key when Ultimate is used &nbsp;&nbsp;&nbsp;
+			<label class="switch">
+				<input type="checkbox" id="TogleColorChangeViaHero">
+				<div class="slider"></div>
+			</label>
+			<p>Flash the U Key when your Ultimate is used.</p>
+			<hr>
+			</div>
+		</div>
+	</body>
+</html>
