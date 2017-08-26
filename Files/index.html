@@ -1,39 +1,20 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head> 
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+			crossorigin="anonymous">
 		<link rel="stylesheet" href="style.css" />
+		<link rel="script" href="main.js"/>
 		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 		<title>Marvel Heroes Lighting Effects</title>
-		<script>
-			overwolf.logitech.led.init(function(callback){
-				if (callback.status=="success"){
-					overwolf.logitech.led.setTargetDevice(overwolf.logitech.led.enums.LogitechDeviceLightingType[PerkeyRGB],result)
-				}
-			});
-
-			function dragMove(){
-				overwolf.windows.getCurrentWindow(function(result){
-					if (result.status=="success"){
-						overwolf.windows.dragMove(result.window.id);
-					}
-				});
-			};
-			function FlashKeysWhite(){
-				var redPer,greenPer,bluePer = 100;
-				var duration = 300;
-				var interval = 500;
-				overwolf.logitech.led.saveCurrentLighting(callback2);
-				overwolf.logitech.led.flashLighting(redPer,greenPer,bluePer,duration,interval,callback3);
-			};
-			
-		</script>
 	</head>
 
 	<body>
 		<div id="content" onmousedown="dragMove();">
 			<h2>Marvel Heroes LED Lighting Effects</h2>
-			<!-- <hr>
-			<button id="flash-keys" onclick="FlashKeysWhite();">Flash Keys White</button> -->
+			<!-- --><hr>
+			<button id="flash-keys" onclick="FlashKeysWhite();">Flash Keys White</button> 
 			<hr>
 			<div class="row">
 			Toggle for Key Color Change by Hero &nbsp;&nbsp;&nbsp;
@@ -70,7 +51,6 @@
 				<div class="slider"></div>
 			</label>
 			<p>Flash the U Key when your Ultimate is used.</p>
-			<hr>
 			</div>
 		</div>
 	</body>
